@@ -6,6 +6,8 @@ import 'package:yes_no_app_210764/presentation/screens/chat/chat_screen.dart';
 
 void main() => runApp(const MyApp());
 
+// prueba de coemntario de 
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
