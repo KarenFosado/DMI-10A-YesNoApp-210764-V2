@@ -6,60 +6,60 @@ import 'package:yes_no_app_210764/presentation/widgets/chat/my_message_bubble.da
 import 'package:yes_no_app_210764/presentation/widgets/chat/her_message_bubble.dart';
 import 'package:yes_no_app_210764/presentation/widgets/chat/shared/message_field_box.dart';
 
-class ChatScreen extends StatelessWidget {// pantalla de chat
+class ChatScreen extends StatelessWidget {
 
-  const ChatScreen({Key? key}) : super(key: key);// constructor
+  const ChatScreen({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {// construccion de la pantalla
+  Widget build(BuildContext context) {
 
 
-    return Scaffold(// se crea un scaffold
-      appBar: AppBar(// se crea un appbar
+    return Scaffold(
+      appBar: AppBar(
         
-        leading: const Padding(// se agrega un padding
-          padding: EdgeInsets.all(4.0),// padding
-          child: CircleAvatar(// se crea un avatar
+        leading: const Padding(
+          padding: EdgeInsets.all(4.0),
+          child: CircleAvatar(
             backgroundImage: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk_6q6auPu_pWnc7fnFa-aEo7lH1Ouwl9c1ctSct0Jfhwt5PHXa9WvCuNqKNN_EbSeHIc&usqp=CAU'),//
           ),
         ),
-        title: const Text('Hola Kity'),// titulo
-        centerTitle: false,// alineacion del titulo
+        title: const Text('Hola Kity'),
+        centerTitle: false,
       ),
-      body: _ChatView(),// cuerpo de la pantalla
+      body: _ChatView(),
     );
   }
 }
 
-class _ChatView extends StatelessWidget {// vista del chat
+class _ChatView extends StatelessWidget {
 
   @override
-  Widget build(BuildContext context) {// construccion de la vista
+  Widget build(BuildContext context) {
 
-    final chatProvider = Provider.of<ChatProvider>(context); // se obtiene el provider
+    final chatProvider = Provider.of<ChatProvider>(context); 
 
-    return SafeArea(// se crea un area segura
-      child: Padding(// se agrega un padding
-        padding: const EdgeInsets.symmetric(horizontal: 10),// padding
-        child: Column(// se crea una columna
+    return SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        child: Column(
           children: [
-            Expanded(child: // se crea un area expandida
-            ListView.builder(// Lista de mensajes
-            controller:  chatProvider.chatScrollController,// controlador del scroll
-              itemCount: chatProvider.messageList.length,// cantidad de mensajes
-              itemBuilder:  (context, index) {// se crea un item de la lista
+            Expanded(child: 
+            ListView.builder(
+            controller:  chatProvider.chatScrollController,
+              itemCount: chatProvider.messageList.length,
+              itemBuilder:  (context, index) {
                 final message = chatProvider.messageList[index];
-                return (message.fromWho == FromWho.hers) // si es de ella
-                   ? HerMessageBubble( message: message,) // si es de ella
-                   : MyMessageBubble(message: message,); // si es mio
+                return (message.fromWho == FromWho.hers) 
+                   ? HerMessageBubble( message: message,) 
+                   : MyMessageBubble(message: message,); 
           
               }),
               ),
             
-            // Campo de texto de mensaje
-            MessageFieldBox(// caja de mensaje
-              onValue: (value) { chatProvider.sendMessage(value); // Envia el mensaje
-              //  onValue: chatProvider.sendMessage, // Envia el mensaje
+           
+            MessageFieldBox(
+              onValue: (value) { chatProvider.sendMessage(value); 
+          
               },
             ),
           ],
