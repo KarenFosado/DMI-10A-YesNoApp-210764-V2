@@ -1,29 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:yes_no_app_210764/domain/entities/message.dart';
 
-class MyMessageBubble extends StatelessWidget {// clase o tipo para los mensajes mios 
+class MyMessageBubble extends StatelessWidget {
 
-  final Message message;// se crea un objeto de tipo mensaje
+  final Message message;
 
-  // sa agrega el mesaje al constructor
-  const MyMessageBubble({super.key, required this.message});// constructor
+  
+  const MyMessageBubble({super.key, required this.message});
 
   @override
-  Widget build(BuildContext context) { // construccion del widget
+  Widget build(BuildContext context) { 
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.end,// alineacion a la derecha
+      crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         Container(// contenedor del mensaje
           padding: const EdgeInsets.all(8),
           margin: const EdgeInsets.symmetric(vertical: 8),
           decoration: BoxDecoration(
-            color: Theme.of(context).secondaryHeaderColor, // aplicacion del color primario 
+            color: Theme.of(context).secondaryHeaderColor, 
             borderRadius: BorderRadius.circular(20),
           ),
           child:  Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child:  Text(
-              message.text, // aqui se agrega el mensaje
+              message.text, 
               style: const TextStyle(color: Color.fromARGB(255, 166, 18, 100)),
             ),
           ),
