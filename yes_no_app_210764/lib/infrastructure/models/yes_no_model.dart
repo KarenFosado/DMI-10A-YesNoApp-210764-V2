@@ -5,7 +5,7 @@ class YesNoModel {
     final bool forced;
     final String image;
 
-    YesNoModel({// constructor
+    YesNoModel({
         required this.answer,
         required this.forced,
         required this.image,

@@ -13,7 +13,7 @@ class MyMessageBubble extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
-        Container(// contenedor del mensaje
+        Container(
           padding: const EdgeInsets.all(8),
           margin: const EdgeInsets.symmetric(vertical: 8),
           decoration: BoxDecoration(

@@ -12,22 +12,22 @@ class MessageFieldBox extends StatelessWidget {
     final textController = TextEditingController();
     final FocusNode focusNode = FocusNode();
 
-// ignore: non_constant_identifier_names
+
 final customBorder = UnderlineInputBorder(
   borderSide: const BorderSide(color: Colors.transparent),
   borderRadius: BorderRadius.circular(10),
 );
 
 final inputDecoration = InputDecoration(
-  hintText: 'Termina tu mensaje con un "?"',
+  hintText: 'Termina el mensaje con un "?"',
     hintStyle: TextStyle(
-    color: Colors.black.withOpacity(0.4), // Ajusta la opacidad aquí
+    color: Colors.black.withOpacity(0.4), 
     fontSize: 16,
   ),
   enabledBorder: customBorder,
   focusedBorder: customBorder,
   filled: true,
-  contentPadding: EdgeInsets.symmetric(vertical: 20, horizontal: 10), // Ajusta el relleno aquí
+  contentPadding: EdgeInsets.symmetric(vertical: 20, horizontal: 10), 
   suffixIcon: IconButton(
     icon: const Icon(Icons.send_outlined),
     onPressed: () {
@@ -48,7 +48,7 @@ final inputDecoration = InputDecoration(
       onFieldSubmitted: (value) {
         textController.clear();
         focusNode.requestFocus();
-        onValue(value); // Envia el mensaje o 
+        onValue(value); 
       },
     );
   }
