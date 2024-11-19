@@ -28,6 +28,8 @@ Elaborado por: [Karen Alyn Fosado Rodríguez](https://github.com/KarenFosado)
 
 ## ScreenShots
 
+![alt text](yes_no_app_210764/assets/captures/1000528088.jpg)
+
 ![alt text](yes_no_app_210764/assets/captures/1000528089.jpg)
 
 ![alt text](yes_no_app_210764/assets/captures/1000528090.jpg)
